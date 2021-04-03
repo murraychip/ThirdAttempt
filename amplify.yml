@@ -5,19 +5,19 @@ BUILD_FOLDER: app
 OUTPUT_FOLDER: dist
 frontend:
 phases:
-preBuild:
-commands:
-- cd ${BUILD_FOLDER}
-- mkdir ./${OUTPUT_FOLDER}
-- npm install
-- npm audit fix
-build:
-commands:
-- npm run build-release
-postBuild:
-commands:
-- pwd
-- ls ${OUTPUT_FOLDER}
+ preBuild:
+  commands:
+   -cd ${BUILD_FOLDER}
+   -mkdir ./${OUTPUT_FOLDER}
+   -npm install
+   -npm audit fix
+ build:
+  commands:
+   -npm run build-release
+ postBuild:
+  commands:
+   -pwd
+   -ls ${OUTPUT_FOLDER}
 artifacts:
 baseDirectory: /app/dist
 files:
