@@ -12,7 +12,7 @@ frontend:
    commands:
     - yarn run build 
  artifacts:
-  baseDirectory: build
+  baseDirectory: /
   files:
    - '/*'
  cache:
