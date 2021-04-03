@@ -7,22 +7,22 @@ frontend:
  phases:
   preBuild:
    commands:
-    -cd ${BUILD_FOLDER}
-    -mkdir ./${OUTPUT_FOLDER}
-    -npm install
-    -npm audit fix
+    - cd ${BUILD_FOLDER}
+    - mkdir ./${OUTPUT_FOLDER}
+    - npm install
+    - npm audit fix
   build:
    commands:
-    -npm run build-release
+    - npm run build-release
   postBuild:
    commands:
-    -pwd
-    -ls ${OUTPUT_FOLDER}
+    - pwd
+    - ls ${OUTPUT_FOLDER}
  artifacts:
   baseDirectory: /app/dist
   files:
-   -'/*'
+   - '/*'
 cache:
  paths:
-  -node_modules//*
+  - node_modules//*
 
