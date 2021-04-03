@@ -10,6 +10,11 @@
       "StackName": "amplify-reacthunt-dev-100855",
       "StackId": "arn:aws:cloudformation:us-east-2:475165357105:stack/amplify-reacthunt-dev-100855/83074250-948e-11eb-8472-024630c32df4",
       "AmplifyAppId": "d3gh8nitisj3r2"
+    },
+    "categories": {
+      "auth": {
+        "reacthuntbe4d60a5": {}
+      }
     }
   }
 }

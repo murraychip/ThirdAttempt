@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "reacthuntbe4d60a5": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
