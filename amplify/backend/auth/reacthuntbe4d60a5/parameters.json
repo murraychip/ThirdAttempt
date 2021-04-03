@@ -1,6 +1,6 @@
 {
     "identityPoolName": "reacthuntbe4d60a5_identitypool_be4d60a5",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "reacthbe4d60a5",
     "userPoolName": "reacthuntbe4d60a5_userpool_be4d60a5",
     "autoVerifiedAttributes": [
