@@ -4,10 +4,8 @@ class Welcome extends Component {
     render() {
         return (
             <header className="App-header">
+                <h3>I can make an app for that</h3>
                 <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Welcome to Murray's Scavenger Hunt
-                </p>
             </header>
         )
     }

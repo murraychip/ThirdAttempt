@@ -14,7 +14,6 @@ class Main extends Component {
             <HashRouter>
                 <div>
                     <h1>Murray Scavenger Hunts</h1>
-                    <h3>I can make an app for that</h3>
                     <ul className="header">
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/hunts">Stuff</NavLink></li>
