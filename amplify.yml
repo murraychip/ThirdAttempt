@@ -1,17 +1,28 @@
-version: 0.1
+version: 1.0
+env:
+variables:
+BUILD_FOLDER: app
+OUTPUT_FOLDER: dist
 frontend:
-  phases:
-    preBuild:
-      commands: 
-        -mkdir build
-        -yarn install
-    build:
-      commands:
-        -yarn run build 
-  artifacts:
-    baseDirectory: .build
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
+phases:
+preBuild:
+commands:
+- cd ${BUILD_FOLDER}
+- mkdir ./${OUTPUT_FOLDER}
+- npm install
+- npm audit fix
+build:
+commands:
+- npm run build-release
+postBuild:
+commands:
+- pwd
+- ls ${OUTPUT_FOLDER}
+artifacts:
+baseDirectory: /app/dist
+files:
+- '/*'
+cache:
+paths:
+- node_modules//*
+
