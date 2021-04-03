@@ -2,21 +2,13 @@ version: 0.1
 frontend:
   phases:
     preBuild:
-      commands:
-        -npm ci
-        -mkdir dist
+      commands: 
         -npm install
     build:
       commands:
-        -npm run build
-    postBuild:
-        commands:
-            -ls
-            -pwd
-            -cd dist
-            -ls
+        -npm run build 
   artifacts:
-    baseDirectory: dist
+    baseDirectory: ./
     files:
       - '**/*'
   cache:
