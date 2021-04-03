@@ -2,13 +2,15 @@ version: 1
 frontend:
   phases:  
     preBuild: 
-        -yarn install
+        -npm install
     build:
-      commands: -yarn run build
+      commands: 
+        -npm run generate
+        -npm run build
     postBuld: 
         commands: []
   artifacts: 
-    baseDirectory: build
+    baseDirectory: .nuxt
     files:
       - '**/*'
   cache:
