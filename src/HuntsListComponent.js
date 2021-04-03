@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import HuntsListSingleItem from './HuntsListSingleItem'
 class HuntsListComponent extends Component {
-    render() {
+    render() { 
         return (
             <table>
-                <tr><td>Hunt 1</td></tr>
-                <tr><td>Hunt 2</td></tr>
-                <tr><td>Hunt 3</td></tr>
+                <HuntsListSingleItem id="1" />
+                <HuntsListSingleItem id="2" />
+                <HuntsListSingleItem id="3" />
             </table>
         )
     }
