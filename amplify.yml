@@ -14,7 +14,7 @@ frontend:
     - npm audit fix
   build:
    commands:
-    - npm run build-release
+    - npm run build
   postBuild:
    commands:
     - pwd
