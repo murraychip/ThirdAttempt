@@ -10,7 +10,7 @@ frontend:
     postBuld: 
         commands: []
   artifacts: 
-    baseDirectory: .nuxt
+    baseDirectory: nuxt
     files:
       - '**/*'
   cache:
