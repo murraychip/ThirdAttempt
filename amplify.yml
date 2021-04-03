@@ -2,15 +2,14 @@ version: 0.1
 frontend:
   phases:
     preBuild:
-      commands:
-        -npm ci
+      commands: 
         -mkdir build
-        -npm install
+        -yarn install
     build:
       commands:
-        -npm run build 
+        -yarn run build 
   artifacts:
-    baseDirectory: build
+    baseDirectory: .build
     files:
       - '**/*'
   cache:
