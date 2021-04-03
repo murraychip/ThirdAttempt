@@ -3,18 +3,18 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
-        - mkdir dist
-        - npm install
+        -npm ci
+        -mkdir dist
+        -npm install
     build:
       commands:
-        - npm run build
+        -npm run build
     postBuild:
         commands:
-            - ls
-            - pwd
-            - cd dist
-            - ls
+            -ls
+            -pwd
+            -cd dist
+            -ls
   artifacts:
     baseDirectory: dist
     files:
