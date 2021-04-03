@@ -2,15 +2,14 @@ version: 1
 frontend:
   phases:  
     preBuild: 
-        -npm install
+        - npm install
     build:
-      commands: 
-        -npm run generate
-        -npm run build
+      commands:  
+        - npm run build
     postBuld: 
         commands: []
   artifacts: 
-    baseDirectory: nuxt
+    baseDirectory: build
     files:
       - '**/*'
   cache:
