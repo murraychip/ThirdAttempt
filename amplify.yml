@@ -7,6 +7,7 @@ frontend:
  phases:
   preBuild:
    commands:
+    - mkdir ./${BUILD_FOLDER}
     - cd ${BUILD_FOLDER}
     - mkdir ./${OUTPUT_FOLDER}
     - npm install
