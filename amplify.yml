@@ -1,8 +1,7 @@
 version: 1
 frontend:
   phases:  
-    preBuild: 
-        - mkdir -p build
+    preBuild:  
         - npm install
     build:
       commands: 
