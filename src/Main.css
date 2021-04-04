@@ -1,0 +1,52 @@
+:root {
+    --amplify-primary-color: lightblue;
+    --amplify-primary-tint: #8aebf1;
+    --amplify-primary-shade: #8aebf1;
+    --amplify-secondary-color: yellow;
+}
+
+
+body {
+    background-color:  #93f8b4;
+}
+#topBar>h1{
+    display:inline-block;
+    width:50%;
+}
+div#headerMenu { 
+    text-align: right;
+    padding-right: 3em;
+    display: inline-block;
+}
+
+ul#header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+    ul#header li {
+        display: inline;
+        float:left;
+        background-color: var(--amplify-primary-color);
+        cursor: pointer;
+    }
+        ul#header li a {
+            display: block;
+            font-weight:bold;
+            color:white;
+            padding: 2em;
+            padding-top: .5em;
+            padding-bottom: .5em;
+            background-color: var(--amplify-primary-color);
+            text-align: center;
+            text-decoration: none;
+            height:33px; 
+        }
+    ul#header > li:hover a {  
+        background-color: var(--amplify-primary-shade);
+    }
+    ul#header button  {
+        padding: 2em;
+        padding-top: .5em;
+        padding-bottom: .5em; 
+    } 

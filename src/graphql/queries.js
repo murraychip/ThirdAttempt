@@ -9,6 +9,7 @@ export const getHunt = /* GraphQL */ `
       description
       createdAt
       updatedAt
+      image
     }
   }
 `;
@@ -25,6 +26,7 @@ export const listHunts = /* GraphQL */ `
         description
         createdAt
         updatedAt
+        image
       }
       nextToken
     }

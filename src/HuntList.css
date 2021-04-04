@@ -1,0 +1,35 @@
+#HuntListContainer > ul > li{
+    list-style:none;
+}
+.singleListItem > div > div {
+    display: inline-block;
+    padding: .3em;
+    opacity: .7;
+}
+.singleListItem:hover > div > div{
+    opacity:1;
+}
+div.buttons {
+    margin-left: 3em;
+}
+div.field{
+    text-align:left;
+    min-width:10em;
+}
+
+div.wrapper{
+    display:block;
+    width:25em;
+    margin-left:35%;
+}
+
+    div.wrapper fieldset > div{
+        padding:.5em;
+        vertical-align:middle;
+        text-align:left;
+    }
+    div.wrapper fieldset > div > label > span{
+        margin-right:1em;
+        display:inline-block;
+        vertical-align:top;
+    }
