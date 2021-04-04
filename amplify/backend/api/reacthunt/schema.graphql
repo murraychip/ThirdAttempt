@@ -1,6 +1,7 @@
-type Hunt @model {
+type Hunt @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
   description: String
   image: String
 }
+ 
