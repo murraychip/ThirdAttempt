@@ -1,4 +1,7 @@
 import React, { useReducer, useState } from 'react';
+import { useHistory } from "react-router-dom";
+import { createHunt as createHuntMutation  } from './graphql/mutations';
+import { API  } from 'aws-amplify';
 
 const formReducer = (state, event) => {
     if (event.reset) {
@@ -11,22 +14,27 @@ const formReducer = (state, event) => {
         ...state,
         [event.name]: event.value
     }
+} 
+async function _create(objData) { 
+    await API.graphql({ query: createHuntMutation, variables: { input: objData  } });
 }
-function HuntCreate() {
+function HuntCreate( ) {
     const [submitting, setSubmitting] = useState(false); 
-    const [formData, setFormData] = useReducer(formReducer, {
-        count: 100
-    }); 
+    const [formData, setFormData] = useReducer(formReducer, { 
+    });
+    const history = useHistory();
 
     const handleSubmit = event => {
         event.preventDefault();
-        setSubmitting(true);
-
+        setSubmitting(true); 
+        _create(formData);
+        //sethunts([...hunts, formData]); 
         setTimeout(() => {
             setSubmitting(false);
             setFormData({
                 reset: true
             })
+            history.push("./#/hunts");
         }, 3000);
     }
     const handleChange = event => {

@@ -1,12 +1,11 @@
 import React, { useState, useEffect  } from 'react'; 
 import HuntsListSingleItem from './HuntsListSingleItem'
-import { listHunts } from './graphql/queries'; 
+import { listHunts } from './graphql/queries';
+import {  deleteHunt as deleteHuntMutation } from './graphql/mutations';
 import { API  } from 'aws-amplify';
 import "./HuntList.css";
 import HuntCreate from './HuntCreate';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import { DataStore } from '@aws-amplify/datastore';
-import { Hunt } from './models';
 
 function HuntsListComponent() { 
         const [hunts, setHunts] = useState([]); 
@@ -23,10 +22,12 @@ function HuntsListComponent() {
         async function deleteHunt({ id }) {
             const newHuntsArray = hunts.filter(Hunt => Hunt.id !== id);
             setHunts(newHuntsArray);
+            await API.graphql({ query: deleteHuntMutation, variables: { input: { id } } });
+    }
 
-            const modelToDelete = await DataStore.query(Hunt, id);
-            DataStore.delete(modelToDelete); 
-        }
+    function afterCreate(newData) {
+        setHunts([...hunts, newData]); 
+    }
 
         return (
             <div>
@@ -46,7 +47,7 @@ function HuntsListComponent() {
                             </div>
                         </Route>
                         <Route path="/create">
-                            <HuntCreate />
+                            <HuntCreate afterCreate={afterCreate} />
                             <Link to="/" className="btn btn-primary">Cancel</Link> 
                         </Route>
                     </Switch>
